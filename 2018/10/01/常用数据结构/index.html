@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="申茂驰的博客">
+    <meta name="keyword"  content="学习">
+    <link rel="shortcut icon" href="/erdianjiu.github.io/img/favicon.ico">
+
+    <title>
+        
+        常用数据结构 - Shen Maochi&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/erdianjiu.github.io/css/aircloud.css">
+    <link rel="stylesheet" href="/erdianjiu.github.io/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Algorithms with Shen Maochi </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/erdianjiu.github.io/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Shen Maochi</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/erdianjiu.github.io/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/erdianjiu.github.io/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/erdianjiu.github.io/archive">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/erdianjiu.github.io/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Algorithms with Shen Maochi </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        常用数据结构
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-10-01 16:05:20</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/erdianjiu.github.io/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>#数组（Array）</p>
+<ul>
+<li>Python语言中没有直接提供数组数据类型，通常使用列表作为数组。array模块包含一个array对象，用于实现其他编程语言中的数据结构。通常用矩阵用二维数组来储存，多项式用数组(用两种储存的表示法)和链表来储存。查找数组元素时有公式用来计算！</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#建立一个2*2的空数组arr</span></span><br><span class="line">n = <span class="number">2</span></span><br><span class="line">arr = [[<span class="keyword">None</span>] * n <span class="keyword">for</span> row <span class="keyword">in</span> range(n)]</span><br></pre></td></tr></table></figure>
+<p>P(x) = 2x<strong>5  + 3x</strong>4 + 5x**2 + 4x + 1用数组来表示。（1）使用一个n+2长度的数组来存放，数组第一个元素用来储存最大指数，然后就是指数从大到小项的系数。优点：程序设计方便，缺点：太浪费内存空间（2）只储存多项式中的非零项。数组的第一个元素用来储存非零项的个数，然后是系数+指数+系数+指数…优点：节约内存空间，缺点：算法设计复杂。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#(1)</span></span><br><span class="line">A = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment">#(2)</span></span><br><span class="line">A = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br></pre></td></tr></table></figure></p>
+<p>#链表(Linked list)</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/erdianjiu.github.io/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/erdianjiu.github.io/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/erdianjiu.github.io/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/erdianjiu.github.io/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '常用数据结构',
+        owner: 'aircloud',
+        repo: 'hexo-aircloud-blog',
+        oauth: {
+            client_id: 'your-id-created-by-https://github.com/settings/applications/new',
+            client_secret: 'your-secret-created-by-https://github.com/settings/applications/new',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
+</html>
