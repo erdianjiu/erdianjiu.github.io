@@ -11,7 +11,7 @@
 
     <title>
         
-        Shen Maochi&#39;s Blog
+        爬虫初识 - Shen Maochi&#39;s Blog
         
     </title>
 
@@ -65,7 +65,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/erdianjiu.github.io/archive">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -87,6 +87,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
     
 </div>
 
@@ -113,80 +117,35 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        爬虫初识
+    </div>
 
-<div class="archives-container">
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-10-05 21:11:20</span></span>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>10-05</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/erdianjiu.github.io/2018/10/05/爬虫初识/">
-                        <span>
-                            爬虫初识
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>10-01</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/erdianjiu.github.io/2018/10/01/常用数据结构/">
-                        <span>
-                            常用数据结构
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-24</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/erdianjiu.github.io/2018/09/24/基础查找、排序算法/">
-                        <span>
-                            基础查找、排序算法
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-23</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/erdianjiu.github.io/2018/09/23/Mid-Autumn Festival to do list/">
-                        <span>
-                            Mid-Autumn Festival to do list
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-
-    </ul>
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/erdianjiu.github.io/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
 </div>
-
+        
+        <div id="comment-container">
+        </div>
+    </div>
 </div>
     </div>
 </div>
@@ -199,10 +158,24 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/erdianjiu.github.io/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/erdianjiu.github.io/js/index.js"></script>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/erdianjiu.github.io/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '爬虫初识',
+        owner: 'aircloud',
+        repo: 'hexo-aircloud-blog',
+        oauth: {
+            client_id: 'your-id-created-by-https://github.com/settings/applications/new',
+            client_secret: 'your-secret-created-by-https://github.com/settings/applications/new',
+        },
+    })
+    gitment.render('comment-container')
+</script>
 
 </html>
