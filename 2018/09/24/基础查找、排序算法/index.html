@@ -11,7 +11,7 @@
 
     <title>
         
-        基础查找、排序算法 - Shen Maochi&#39;s Blog
+        查找算法 - Shen Maochi&#39;s Blog
         
     </title>
 
@@ -119,7 +119,7 @@
 
 <div class="post-container">
     <div class="post-title">
-        基础查找、排序算法
+        查找算法
     </div>
 
     <div class="post-meta">
@@ -142,7 +142,7 @@
 <li>算法的性能分析包括两方面：时间复杂度和空间复杂度。</li>
 </ul>
 <p>时间复杂度：用big O符号表示。n+1、100n+99属于同增长量级都记为O(n)</p>
-<p>#基础查找算法</p>
+<p>#查找算法</p>
 <ul>
 <li>顺序查找：按着顺序从头找到尾。时间复杂度为O(n)。</li>
 </ul>
@@ -154,6 +154,10 @@
 <p>例：在列表中查找特定数值x：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#非递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(alist, item)</span>:</span> <span class="comment">#二分查找法</span></span><br><span class="line">    low = <span class="number">0</span>              <span class="comment">#左边界  </span></span><br><span class="line">    high = len(alist) - <span class="number">1</span>    <span class="comment">#右边界</span></span><br><span class="line">    <span class="keyword">while</span> low &lt;= high:   <span class="comment">#左边界小于右边界，则循环</span></span><br><span class="line">        mid = (low + high) // <span class="number">2</span>  <span class="comment">#计算中间位置</span></span><br><span class="line">        <span class="keyword">if</span> alist[mid] &lt; item:</span><br><span class="line">            low = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> alist[mid] &gt; item:</span><br><span class="line">            high = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid   <span class="comment">#查找成功返回下标</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>            <span class="comment">#不存在查找对象，返回-1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span> <span class="comment">#测试数据</span></span><br><span class="line">    test = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">33</span>, <span class="number">8</span>, <span class="number">37</span>, <span class="number">29</span>, <span class="number">25</span>, <span class="number">99</span>, <span class="number">100</span>]</span><br><span class="line">    print(<span class="string">'索引为'</span>,search(test, <span class="number">3</span>))</span><br><span class="line">    print(<span class="string">'索引为'</span>,search(test, <span class="number">98</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>: main()</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#递归实现</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(item, alist, low, high)</span>:</span>  <span class="comment">#二分法查找</span></span><br><span class="line">    <span class="keyword">if</span> high &lt;= low: <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    mid = (low + high) // <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> alist[mid] &gt; item:</span><br><span class="line">        <span class="keyword">return</span> search(item, alist, low, mid)</span><br><span class="line">    <span class="keyword">elif</span> alist[mid] &lt; item:</span><br><span class="line">        <span class="keyword">return</span> search(item, alist, mid+<span class="number">1</span>, high)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> mid</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binarysearch</span><span class="params">(item, alist)</span>:</span>  <span class="comment">#递归二分法查找</span></span><br><span class="line">    <span class="keyword">return</span> search(item, alist, <span class="number">0</span>, len(alist))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span> <span class="comment">#测试数据</span></span><br><span class="line">    test = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">33</span>, <span class="number">8</span>, <span class="number">37</span>, <span class="number">29</span>, <span class="number">25</span>, <span class="number">99</span>, <span class="number">100</span>]</span><br><span class="line">    print(<span class="string">'索引为'</span>,binarysearch(<span class="number">3</span>, test))</span><br><span class="line">    print(<span class="string">'索引为'</span>,binarysearch(<span class="number">98</span>, test))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>: main()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>插值查找法（二分查找的改进）：按照数据位置的分布，利用公式预测数据所在的位置，再以二分法的方式渐渐逼近。插值排序的公式：<br>Mid = low + ((key - data[low]) / (data[high] - data[low])) * (high - low)<br>例：随机生成50个数，然后实现插值查找法：<br><code>`</code>python<br>import random</li>
+</ul>
+<p>def interpolation_search(data, val):<br>    low  = 0<br>    high = 49<br>    print(‘查找过程中…’)<br>    while low &lt;= high and val != 1:<br>        mid = low + int((val - data[low]) * (high - low) / (data[high] - data[low]))<br>        if </p>
 <p>#基础排序算法</p>
 <ul>
 <li><strong>loading…</strong></li>
@@ -194,7 +198,7 @@
 <script src="/erdianjiu.github.io/js/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: '基础查找、排序算法',
+        id: '查找算法',
         owner: 'aircloud',
         repo: 'hexo-aircloud-blog',
         oauth: {

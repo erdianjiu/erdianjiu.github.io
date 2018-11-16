@@ -144,6 +144,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#建立一个2*2的空数组arr</span></span><br><span class="line">n = <span class="number">2</span></span><br><span class="line">arr = [[<span class="keyword">None</span>] * n <span class="keyword">for</span> row <span class="keyword">in</span> range(n)]</span><br></pre></td></tr></table></figure>
 <p>P(x) = 2x<strong>5  + 3x</strong>4 + 5x**2 + 4x + 1用数组来表示。（1）使用一个n+2长度的数组来存放，数组第一个元素用来储存最大指数，然后就是指数从大到小项的系数。优点：程序设计方便，缺点：太浪费内存空间（2）只储存多项式中的非零项。数组的第一个元素用来储存非零项的个数，然后是系数+指数+系数+指数…优点：节约内存空间，缺点：算法设计复杂。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#(1)</span></span><br><span class="line">A = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment">#(2)</span></span><br><span class="line">A = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br></pre></td></tr></table></figure></p>
 <p>#链表(Linked list)</p>
+<ul>
+<li>链表：是由许多相同数据类型的数据项按特定顺序排列而成的线性表。链表的特点是储存位置在计算机中是不连续且随机存放的，其优点是数据插入和删除(内存申请和删除方便)都方便，不需要移动大量数据；缺点是无法像静态数据那样可随机读取数据。</li>
+<li>单向链表：</li>
+</ul>
 
         
             <div class="donate-container">
